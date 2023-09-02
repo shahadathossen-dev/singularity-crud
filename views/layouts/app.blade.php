@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{ asset('singularity-crud/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('singularity-crud::app.css') }}" rel="stylesheet">
 
     </head>
     <body class="antialiased min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0 flex flex-col">

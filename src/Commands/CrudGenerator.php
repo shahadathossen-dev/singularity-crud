@@ -90,7 +90,7 @@ class CrudGenerator extends GeneratorCommand
         $this->call('generate:views', ['name' => $model]);
 
         // Append resource route to web.php
-        $this->files->append(__DIR__ . '/../../routes/web.php', "Route::resource('$resourceName', $controllerClass::class);\n");
+        $this->files->append(__DIR__ . '/../../routes/web.php', "Route::resource('$resourceName', $controllerClass::class)->middleware('web');\n");
 
         $this->call('migrate');
 

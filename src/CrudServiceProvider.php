@@ -46,11 +46,11 @@ class CrudServiceProvider extends ServiceProvider
 
         // Load package public assets
         $this->publishes([
-            __DIR__.'/../views' => resource_path('views/vendor/singularity-crud', 'singularity-crud'),
+            __DIR__.'/../views' => resource_path('views/vendor/singularity-crud'),
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/../assets' => public_path('singularity-crud', 'singularity-crud'),
+            __DIR__.'/../assets' => public_path('singularity-crud'),
         ], 'laravel-assets');
     }
 }

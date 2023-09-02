@@ -41,7 +41,7 @@ class MigrationGenerator extends GeneratorCommand
     protected function getPath($name)
     {
         $fileName = $this->getFileName($name);
-        return $this->laravel['path'] . "/../database/migrations/$fileName.php";
+        return database_path("migrations/$fileName.php");
     }
 
     /**
