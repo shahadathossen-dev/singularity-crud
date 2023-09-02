@@ -34,7 +34,7 @@ class ViewGenerator extends GeneratorCommand
             'index.blade.php' => __DIR__ . '/../../stubs/bootstrap/index.stub',
             'create.blade.php' => __DIR__ . '/../../stubs/bootstrap/create.stub',
             'edit.blade.php' => __DIR__ . '/../../stubs/bootstrap/edit.stub',
-            'show.blade.php' => __DIR__ . '/../../stubs/bootstrap/view.stub'
+            'show.blade.php' => __DIR__ . '/../../stubs/bootstrap/show.stub'
         ];
     }
 
