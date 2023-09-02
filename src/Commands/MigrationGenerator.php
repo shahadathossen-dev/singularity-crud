@@ -12,7 +12,7 @@ class MigrationGenerator extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'generate:resourceMigration {name}';
+    protected $signature = 'generate:migration {name}';
 
     /**
      * The console command description.
