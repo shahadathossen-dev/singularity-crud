@@ -52,7 +52,7 @@ class ControllerGenerator extends GeneratorCommand
         $resourceName = str_replace('Controller', '', str_replace($this->getNamespace($name) . '\\', '', $name));
         $replace = [
             'resourceVar' => Str::camel($resourceName),
-            'resourceVarPlural' => Str::plural(Str::camel($resourceName)),
+            'resourcePlural' => Str::plural(Str::camel($resourceName)),
             'resourcePath' => Str::plural(Str::kebab($resourceName)),
             'ResourceClass' => $resourceName,
             'ResourceRequest' => Str::ucfirst($resourceName) . 'Request'

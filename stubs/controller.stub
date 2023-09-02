@@ -15,7 +15,7 @@ class {{ class }} extends Controller
      */
     public function index()
     {
-        return view('resourcePath.index', ['resourceVarPlural' => ResourceClass::paginate(10)]);
+        return view('resourcePath.index', ['resourcePlural' => ResourceClass::paginate(10)]);
     }
 
     /**
