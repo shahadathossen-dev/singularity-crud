@@ -1,0 +1,91 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Models\ResourceClass;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ResourceRequest;
+
+class {{ class }} extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('resourcePath.index', ['resourceVarPlural' => ResourceClass::paginate(10)]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('resourcePath.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\ResourceRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(ResourceRequest $request, ResourceClass $resourceVar)
+    {
+        $newResource = ResourceClass::create($request->only($resourceVar->fillable));
+
+        return back()->with('message', 'Resource created successfully');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\ResourceClass  $resourceVar
+     * @return \Illuminate\Http\Response
+     */
+    public function show(ResourceClass $resourceVar)
+    {
+        return view('resourcePath.show', ['resourceVar' => $resourceVar]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\ResourceClass  $resourceVar
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(ResourceClass $resourceVar)
+    {
+        return view('resourcePath.edit', ['resourceVar' => $resourceVar]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\ResourceRequest  $request
+     * @param  \App\Models\ResourceClass  $resourceVar
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ResourceRequest $request, ResourceClass $resourceVar)
+    {
+        $updated = $resourceVar->update($request->only($resourceVar->fillable));
+
+        return back()->with('message', 'Resource updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\ResourceClass  $resourceVar
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(ResourceClass $resourceVar)
+    {
+        $deleted = $resourceVar->delete();
+        return back()->with('message', 'Resource deleted successfully');
+    }
+}

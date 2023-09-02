@@ -1,0 +1,33 @@
+{
+    "name": "singularity/crud",
+    "description": "A simple laravel package for crud generation",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Singularity\\Crud\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ShahadatShobuj",
+            "email": "shobujlingdu@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Singularity\\Crud\\CrudServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+          "php artisan generate:crud Employee",
+          "php artisan vendor:publish",
+          "php artisan migrate"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
