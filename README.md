@@ -35,10 +35,20 @@ php artisan vendor:publish
 ```
 
 ### Usage:
-As per task requirement it will automatically generate a default CRUD for `Employee` model and will run migration to insert the table. So you need to have configured the database in `.env` file before installing this package.
+As per task requirement it will automatically generate a default CRUD for the given model and will run migration to insert the table. Singularity CRUD will generate for you -
+
+- Generate view files
+- Generate controller
+- Generate model
+- Generate validation files
+- Generate Migration Files
+- Generate routes.
+- Run migration for you.
 
 To generate the crud resource of your need, run the command with your model name;
 
 ```
 php artisan crud:generate ModelName
 ```
+
+Enjoy your awesome work. Thank you for choosing Singularity CRUD.
