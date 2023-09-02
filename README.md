@@ -25,7 +25,7 @@ To discover the package by your composer, you need to udpate your composer by fo
 Then run the following comand.
 
 ```
-composer require singularity/crud
+composer require singularity/crud:dev-master
 ```
 
 next run to publish the vendor styles and layouts 
