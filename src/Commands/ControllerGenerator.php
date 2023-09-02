@@ -54,7 +54,7 @@ class ControllerGenerator extends GeneratorCommand
             'resourceVar' => Str::camel($resourceName),
             'resourceVarPlural' => Str::plural(Str::camel($resourceName)),
             'resourcePath' => Str::plural(Str::kebab($resourceName)),
-            'resourseClass' => $resourceName,
+            'resourceClass' => $resourceName,
             'ResourceRequest' => Str::ucfirst($resourceName) . 'Request'
         ];
         return str_replace(
