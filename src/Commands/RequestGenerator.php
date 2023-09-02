@@ -12,7 +12,7 @@ class RequestGenerator extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'generate:controller {name}';
+    protected $signature = 'generate:request {name}';
 
     /**
      * The console command description.
