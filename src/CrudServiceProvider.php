@@ -51,6 +51,6 @@ class CrudServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../assets' => public_path('singularity-crud'),
-        ], 'laravel-assets');
+        ], 'assets');
     }
 }

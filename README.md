@@ -31,7 +31,7 @@ composer require singularity/crud:dev-master
 next run to publish the vendor styles and layouts 
 
 ```
-php artisan vendor:publish
+php artisan vendor:publish --tag=assets
 ```
 
 ### Usage:
