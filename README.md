@@ -51,4 +51,4 @@ To generate the crud resource of your need, run the command with your model name
 php artisan crud:generate ModelName
 ```
 
-Enjoy your awesome work. Thank you for choosing Singularity CRUD.
+Singularity CRUD is a free Laravel package. So enjoy and have a great work. Thank you for choosing Singularity CRUD.
