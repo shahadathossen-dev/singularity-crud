@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('singularity-crud::layouts.footer')
 
 @section('content')
 
