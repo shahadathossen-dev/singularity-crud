@@ -80,13 +80,12 @@ class CrudGenerator extends GeneratorCommand
         $this->makeDirectory($path);
         $this->files->put($path, $this->sortImports($this->buildClass($name)));
 
-        // Generate resorce routes
-        Storage::append('routes/web.php', "Route::resource('$resourceName', $controllerClass::class)");
-
-        // Append resource route to web.php
         $model = str_replace($this->getNamespace($name).'\\', '', $name);
         $resourceName = Str::plural(strtolower(Str::kebab($model)));
         $controllerClass = $this->getControllerClassName($model);
+
+        // Append resource route to web.php
+        Storage::append('routes/web.php', "Route::resource('$resourceName', $controllerClass::class)");
 
         $this->call('generate:migration', ['name' => $model]);
         $this->call('generate:request', ['name' => $this->getRequestClassName($model)]);
