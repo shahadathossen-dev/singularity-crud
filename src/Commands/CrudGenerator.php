@@ -40,7 +40,7 @@ class CrudGenerator extends GeneratorCommand
     // Custom required methods
     protected function controllerNameSpace()
     {
-        return $this->rootNamespace() . "\Http\\Controllers\\";
+        return $this->rootNamespace() . "Http\\Controllers\\";
     }
 
     protected function getMigrationClassName($name)
@@ -84,16 +84,15 @@ class CrudGenerator extends GeneratorCommand
         $resourceName = Str::plural(strtolower(Str::kebab($model)));
         $controllerClass = $this->getControllerClassName($model);
 
-        // Append resource route to web.php
-        Storage::append('routes/web.php', "Route::resource('$resourceName', $controllerClass::class)");
-
         $this->call('generate:migration', ['name' => $model]);
         $this->call('generate:request', ['name' => $this->getRequestClassName($model)]);
         $this->call('generate:controller', ['name' => $controllerClass]);
         $this->call('generate:views', ['name' => $model]);
 
-        $this->call('migrate');
+        // Append resource route to web.php
+        $this->files->append(__DIR__ . '/../../routes/web.php', "Route::resource('$resourceName', $controllerClass::class);");
 
+        $this->call('migrate');
 
         $this->info('Resource generated successfully.');
     }
