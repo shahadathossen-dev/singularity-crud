@@ -36,7 +36,7 @@ class ControllerGenerator extends GeneratorCommand
     // Custom required methods
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . "\Http\\Controllers";
+        return $rootNamespace . "Http\\Controllers";
     }
 
     /**

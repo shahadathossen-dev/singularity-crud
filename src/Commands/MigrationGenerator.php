@@ -52,7 +52,18 @@ class MigrationGenerator extends GeneratorCommand
      */
     protected function getFileName($name)
     {
-        return date('Y_m_d') . '_' . time() . '_' . Str::snake($name);
+        return date('Y_m_d') . '_' . time() . '_create_' . Str::snake($name) . '_table';
+    }
+
+    /**
+     * Get the destination class path.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    protected function getClassName($name)
+    {
+        return 'Create' . $name . 'Table';
     }
 
     /**
@@ -83,7 +94,7 @@ class MigrationGenerator extends GeneratorCommand
         return str_replace(
             array_keys($replace),
             array_values($replace),
-            $this->generateClass($name)
+            $this->generateClass($this->getClassName($name))
         );
     }
 

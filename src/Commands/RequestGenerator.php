@@ -57,7 +57,7 @@ class RequestGenerator extends GeneratorCommand
      */
     public function handle()
     {
-        $this->comment('Building new crud controller.');
+        $this->comment('Building new crud Request.');
 
         $name = $this->qualifyClass($this->getNameInput());
         $path = $this->getPath($name);

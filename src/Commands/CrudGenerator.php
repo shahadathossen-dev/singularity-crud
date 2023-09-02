@@ -85,7 +85,7 @@ class CrudGenerator extends GeneratorCommand
         $resourceName = Str::plural(strtolower(Str::kebab($model)));
         $controllerClass = $this->getControllerClassName($model);
 
-        $this->call('generate:migration', ['name' => $this->getMigrationClassName($model)]);
+        $this->call('generate:migration', ['name' => $model]);
         $this->call('generate:request', ['name' => $this->getRequestClassName($model)]);
         $this->call('generate:controller', ['name' => $controllerClass]);
         $this->call('generate:views', ['name' => $model]);
