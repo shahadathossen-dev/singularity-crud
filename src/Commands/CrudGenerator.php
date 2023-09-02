@@ -90,6 +90,8 @@ class CrudGenerator extends GeneratorCommand
         $this->call('generate:controller', ['name' => $controllerClass]);
         $this->call('generate:views', ['name' => $model]);
 
+        $this->call('migrate');
+
         Storage::append('routes/web.php', "Route::resource('$resourceName', $controllerClass::class)");
 
         $this->info('Resource generated successfully.');

@@ -23,9 +23,9 @@
     },
     "scripts": {
         "post-install-cmd": [
-          "php artisan generate:crud Employee",
-          "php artisan vendor:publish",
-          "php artisan migrate"
+          "@php artisan generate:crud Employee",
+          "@php artisan vendor:publish",
+          "@php artisan migrate"
         ]
     },
     "minimum-stability": "dev",
