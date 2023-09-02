@@ -21,8 +21,8 @@
                 </tr>
             </thead>
             <tbody>
-                @if($resourcesPlural->count())
-                @foreach ($resourcesPlural as $resourceVar)
+                @if($resourcePlural->count())
+                @foreach ($resourcePlural as $resourceVar)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $resourceVar->id}}
@@ -52,6 +52,6 @@
                 @endif
             </tbody>
         </table>
-        {{ $resourcesPlural->links() }}
+        {{ $resourcePlural->links() }}
     </div>
 @endsection
