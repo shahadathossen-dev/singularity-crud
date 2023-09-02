@@ -52,7 +52,7 @@ class MigrationGenerator extends GeneratorCommand
      */
     protected function getFileName($name)
     {
-        return date('Y_m_d') . '_' . time() . '_create_' . Str::snake($name) . '_table';
+        return date('Y_m_d') . '_' . time() . '_create_' . Str::plural(Str::snake($name)) . '_table';
     }
 
     /**
@@ -63,7 +63,7 @@ class MigrationGenerator extends GeneratorCommand
      */
     protected function getClassName($name)
     {
-        return 'Create' . $name . 'Table';
+        return 'Create' . Str::plural($name) . 'Table';
     }
 
     /**
