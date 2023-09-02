@@ -104,7 +104,7 @@ class ViewGenerator extends GeneratorCommand
 
         foreach ($this->getStub() as $name => $stub) {
             $this->current_stub = $stub;
-            $this->makeDirectory($path);
+            $this->makeDirectory($path . '/' . $name);
             $this->files->put($path . '/' . $name, $this->generateView($this->getNameInput()));
         }
         $this->info('Views created successfully.');
